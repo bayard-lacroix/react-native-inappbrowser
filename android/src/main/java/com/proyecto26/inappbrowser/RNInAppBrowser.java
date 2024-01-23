@@ -246,8 +246,15 @@ public class RNInAppBrowser {
   }
 
   public void isAvailable(Context context, final Promise promise) {
-    List<ResolveInfo> resolveInfos = getPreferredPackages(context);
-    promise.resolve(!(resolveInfos == null || resolveInfos.isEmpty()));
+  if(Build.VERSION.SDK_INT >= 30){
+      List<ResolveInfo> resolveInfos = getPreferredPackages(context);
+      promise.resolve(!(resolveInfos == null || resolveInfos.isEmpty()));
+    }else{
+      // return true if the api level is lessthan 30
+      promise.resolve( true);
+    }
+    // List<ResolveInfo> resolveInfos = getPreferredPackages(context);
+    // promise.resolve(!(resolveInfos == null || resolveInfos.isEmpty()));
   }
 
   @Subscribe
