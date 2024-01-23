@@ -65,7 +65,7 @@ dependencies {
     implementation "com.android.support:customtabs:$supportLibVersion"
   } else {
     def defaultAndroidXAnnotationVersion = "1.5.+"
-    def defaultAndroidXBrowserVersion = "1.4.+"
+    def defaultAndroidXBrowserVersion = "1.5.+"
     if (androidXAnnotationVersion == null) {
       androidXAnnotationVersion = defaultAndroidXAnnotationVersion
     }
