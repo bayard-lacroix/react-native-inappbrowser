@@ -246,7 +246,7 @@ public class RNInAppBrowser {
   }
 
   public void isAvailable(Context context, final Promise promise) {
-  if(Build.VERSION.SDK_INT >= 30){
+  if(Build.VERSION.SDK_INT > 30){
       List<ResolveInfo> resolveInfos = getPreferredPackages(context);
       promise.resolve(!(resolveInfos == null || resolveInfos.isEmpty()));
     }else{
